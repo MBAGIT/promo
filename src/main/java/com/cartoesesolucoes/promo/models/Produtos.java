@@ -3,6 +3,6 @@ package com.cartoesesolucoes.promo.models;
 
 import javax.persistence.Entity;
 
-@Entity(name = "Produtos")
+//@Entity
 public class Produtos {
 }
