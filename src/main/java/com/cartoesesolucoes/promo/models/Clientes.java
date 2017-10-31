@@ -140,7 +140,6 @@ public class Clientes {
     }
 
 
-
     public Long getIdCliente() {
         return idCliente;
     }
@@ -396,4 +395,5 @@ public class Clientes {
     public void setDatanascimento(Date datanascimento) {
         this.datanascimento = datanascimento;
     }
+
 }
