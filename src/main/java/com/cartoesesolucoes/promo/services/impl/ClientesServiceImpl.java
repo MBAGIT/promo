@@ -1,5 +1,6 @@
 package com.cartoesesolucoes.promo.services.impl;
 
+import com.cartoesesolucoes.promo.exception.ClientesNotFoundException;
 import com.cartoesesolucoes.promo.models.Clientes;
 import com.cartoesesolucoes.promo.repositories.ClientesRepository;
 import com.cartoesesolucoes.promo.services.ClientesService;
@@ -17,9 +18,9 @@ public class ClientesServiceImpl implements ClientesService {
 
 
     @Override
-    public Optional<Clientes> ClientExists(Long idcliente) {
+    public boolean ClientExists(Long idcliente) {
 
-        return Optional.of (clientesRepository.findOne (idcliente));
+        return clientesRepository.findByidCliente (idcliente).isPresent ();
 
 
     }
@@ -27,9 +28,6 @@ public class ClientesServiceImpl implements ClientesService {
     @Override
     public String ClientDiscount(Long idcliente) {
 
-        if (!ClientExists (idcliente).isPresent ()) return "0"; // default value
-        return clientesRepository.findOne (idcliente).getDescontos ();
-
-
+        return clientesRepository.findByidCliente (idcliente).get ().getDescontos ();
     }
 }

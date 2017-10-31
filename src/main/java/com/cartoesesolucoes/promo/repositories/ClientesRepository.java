@@ -8,6 +8,8 @@ import java.util.Optional;
 
 public interface ClientesRepository extends JpaRepository<Clientes,Long> {
 
+    Optional<Clientes> findByidCliente(Long idCliente);
+
 
 }
 

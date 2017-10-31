@@ -4,9 +4,7 @@ import com.cartoesesolucoes.promo.models.Clientes;
 
 import java.util.Optional;
 
-/**
- * Created by Mohamed on 31/10/2017.
- */
+
 public interface ClientesService {
 
 
@@ -15,7 +13,7 @@ public interface ClientesService {
      * @param idcliente
      * @return
      */
-    Optional<Clientes> ClientExists(Long idcliente);
+    boolean ClientExists(Long idcliente);
 
 
     /**
