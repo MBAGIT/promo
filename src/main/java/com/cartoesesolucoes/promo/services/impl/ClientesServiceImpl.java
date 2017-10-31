@@ -2,18 +2,18 @@ package com.cartoesesolucoes.promo.services.impl;
 
 import com.cartoesesolucoes.promo.exception.ClientesNotFoundException;
 import com.cartoesesolucoes.promo.models.Clientes;
-import com.cartoesesolucoes.promo.repositories.ClientesRepository;
-import com.cartoesesolucoes.promo.services.ClientesService;
+import com.cartoesesolucoes.promo.repositories.IClientesRepository;
+import com.cartoesesolucoes.promo.services.IClientesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-public class ClientesServiceImpl implements ClientesService {
+public class ClientesServiceImpl implements IClientesService {
 
     @Autowired
-    private ClientesRepository clientesRepository;
+    private IClientesRepository clientesRepository;
 
 
 

@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -51,7 +53,7 @@ public class Clientes {
     /** dataregisto **/
     @NotNull
     @Pattern (regexp = "DD-MM-YYYY")
-    private Date dataregisto;
+    private SimpleDateFormat dataregisto = new SimpleDateFormat ("11-11-1111");
 
     /** pontos **/
     @NotNull
@@ -130,7 +132,7 @@ public class Clientes {
     /** indicador **/
     @NotNull
     @Pattern (regexp = "DD-MM-YYYY")
-    private Date datanascimento;
+    private SimpleDateFormat datanascimento = new SimpleDateFormat("11-11-1111");
 
     /**
      * Default condtructor For JPA
@@ -220,11 +222,11 @@ public class Clientes {
         this.profissao = profissao;
     }
 
-    public Date getDataregisto() {
+    public SimpleDateFormat getDataregisto() {
         return dataregisto;
     }
 
-    public void setDataregisto(Date dataregisto) {
+    public void setDataregisto(SimpleDateFormat dataregisto) {
         this.dataregisto = dataregisto;
     }
 
@@ -388,11 +390,11 @@ public class Clientes {
         this.indicador = indicador;
     }
 
-    public Date getDatanascimento() {
+    public SimpleDateFormat getDatanascimento() {
         return datanascimento;
     }
 
-    public void setDatanascimento(Date datanascimento) {
+    public void setDatanascimento(SimpleDateFormat datanascimento) {
         this.datanascimento = datanascimento;
     }
 

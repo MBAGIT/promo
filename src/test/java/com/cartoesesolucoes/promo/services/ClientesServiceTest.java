@@ -2,7 +2,7 @@ package com.cartoesesolucoes.promo.services;
 
 import com.cartoesesolucoes.promo.PromoApplication;
 import com.cartoesesolucoes.promo.models.Clientes;
-import com.cartoesesolucoes.promo.services.ClientesService;
+import com.cartoesesolucoes.promo.services.IClientesService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,7 +19,7 @@ public class ClientesServiceTest {
 
 
     @Autowired
-    private ClientesService ClientesService;
+    private IClientesService ClientesService;
 
 
 
