@@ -1,11 +1,11 @@
 package com.cartoesesolucoes.promo.models;
 
+import org.hibernate.validator.constraints.Email;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.Email;
 
 @Entity
 public class Empresa {
@@ -71,16 +71,12 @@ public class Empresa {
     /** uniqueid **/
     @NotNull
     private String uniqueid = "";
-    
-    
-    
-    
-    
-    
-    
 
+	public Empresa() {
+		// default condtructor for jpa
+	}
 
-    public String getNome() {
+	public String getNome() {
 		return nome;
 	}
 

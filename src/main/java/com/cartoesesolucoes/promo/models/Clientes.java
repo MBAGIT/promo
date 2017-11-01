@@ -8,9 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 @Entity
 public class Clientes {

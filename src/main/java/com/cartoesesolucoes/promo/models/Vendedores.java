@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import java.util.Date;
+import java.text.SimpleDateFormat;
 
 @Entity
 public class Vendedores {
@@ -50,8 +50,8 @@ public class Vendedores {
 
     /** dataatualiza **/
     @NotNull
-    @Pattern(regexp = "DD-MM-YYYY")
-    private Date dataatualiza;
+    @Pattern(regexp = "DD-MM-YYYY hh:mm:ss")
+    private SimpleDateFormat dataatualiza = new SimpleDateFormat ("11-11-1111 00:00:00");
 
     /** nom_pro */
     private String nom_pro ;
@@ -134,13 +134,9 @@ public class Vendedores {
         this.uniqueid = uniqueid;
     }
 
-    public Date getDataatualiza() {
-        return dataatualiza;
-    }
+    public SimpleDateFormat getDataatualiza() { return dataatualiza;}
 
-    public void setDataatualiza(Date dataatualiza) {
-        this.dataatualiza = dataatualiza;
-    }
+    public void setDataatualiza(SimpleDateFormat dataatualiza) { this.dataatualiza = dataatualiza;}
 
     public String getNom_pro() {
         return nom_pro;

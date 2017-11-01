@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 
-//@Entity
+@Entity
 public class Produtos {
 	
 	@Id
@@ -77,6 +77,10 @@ public class Produtos {
     
     /** String **/
     private String iva;
+
+	public Produtos() {
+		// default constructor for jpa
+	}
 
 	public Long getId() {
 		return id;

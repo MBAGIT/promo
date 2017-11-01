@@ -1,10 +1,5 @@
 package com.cartoesesolucoes.promo.services;
 
-import com.cartoesesolucoes.promo.models.Clientes;
-
-import java.util.Optional;
-
-
 public interface IClientesService {
 
 

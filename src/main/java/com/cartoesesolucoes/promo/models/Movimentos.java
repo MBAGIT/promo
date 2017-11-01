@@ -1,13 +1,11 @@
 package com.cartoesesolucoes.promo.models;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import java.text.SimpleDateFormat;
 
 
 @Entity
@@ -81,8 +79,13 @@ public class Movimentos {
     
     /** ndoc **/
     private String ndoc;
-    
-    public Long getId() {
+
+
+	public Movimentos() {
+		// default constructor for jpa
+	}
+
+	public Long getId() {
         return id;
     }
 
