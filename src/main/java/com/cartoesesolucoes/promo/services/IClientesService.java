@@ -1,5 +1,9 @@
 package com.cartoesesolucoes.promo.services;
 
+import com.cartoesesolucoes.promo.models.Clientes;
+
+import java.util.List;
+
 public interface IClientesService {
 
 
@@ -18,6 +22,13 @@ public interface IClientesService {
      * @return
      */
     String ClientDiscount(Long idcliente);
+
+    /**
+     * Find all Clientes
+     *
+     * @return java.util.List {@link Clientes}
+     */
+    List<Clientes> getAllClientes();
 
 
 

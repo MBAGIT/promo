@@ -4,6 +4,7 @@ package com.cartoesesolucoes.promo.models;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
@@ -15,7 +16,8 @@ public class Clientes {
 
 
     @Id
-    @SequenceGenerator (name = "clientes_seq",sequenceName = "clientes_seq")
+    @SequenceGenerator (name = "clientes_seq",sequenceName = "clientes_seq" )
+    @GeneratedValue(generator = "clientes_seq")
     private Long idCliente ;
 
     /** codigo **/

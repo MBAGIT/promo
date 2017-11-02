@@ -2,6 +2,7 @@ package com.cartoesesolucoes.promo.models;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
@@ -11,6 +12,7 @@ public class Produtos {
 	
 	@Id
     @SequenceGenerator(name = "produtos_seq",sequenceName = "produtos_seq")
+	@GeneratedValue(generator = "produtos_seq")
     private Long id ;
 	
 	/** codigobarras **/

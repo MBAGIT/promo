@@ -1,6 +1,7 @@
 package com.cartoesesolucoes.promo.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
@@ -15,6 +16,7 @@ public class Movimentos {
 
     @Id
     @SequenceGenerator(name = "movimentos_seq",sequenceName = "movimentos_seq")
+	@GeneratedValue(generator = "movimentos_seq")
     private Long id ;
 
     /** tipo**/

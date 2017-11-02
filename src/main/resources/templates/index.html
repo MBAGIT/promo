@@ -16,20 +16,14 @@
                 });
             });
      </script>
+
+
 </head>
 <body>
-
-    <h1 >To do !!!! </h1>
-    <span th:text="#{lang.change}"></span>:
-    <select id="locales">
-        <option value="" ></option>
-        <option id="en" value="en" th:text="#{lang.en}"></option>
-        <option id="es" value="es" th:text="#{lang.es}"></option>
-        <option id="pt" value="pt" th:text="#{lang.pt}"></option>
-    </select>
-
-    <p th:text="#{greeting}"></p>
-
-
+    <div th:replace="header :: header">&nbsp;</div>
+        <div  class="with:80%" style="height:90%" >
+            <h1 th:text="#{greeting}"></h1>
+        </div>
+    <div th:replace="footer :: footer">&nbsp;</div>
 </body>
 </html>

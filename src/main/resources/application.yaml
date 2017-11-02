@@ -2,17 +2,30 @@ spring:
   datasource:
     driverClassName: org.h2.Driver
     url: jdbc:h2:mem:test;MODE=PostgreSQL
-    username: test
-    password: test
+    username: sa
+    password:
   jpa:
+    show-sql: true
     hibernate:
          ddl-auto: create-drop
+    properties:
+        hibernate:
+            dialect: org.hibernate.dialect.PostgreSQLDialect
+  thymeleaf:
+       cache: false
 
 
-
+# java -cp h2*.jar org.h2.tools.Server
+# url: jdbc:h2:tcp://localhost/~/test;MODE=PostgreSQL   // server mode
+# url : jdbc:h2:mem:test;MODE=PostgreSQL;DB_CLOSE_ON_EXIT=FALSE  // For mem mode
 #spring:
 #  datasource:
 #   url: jdbc:postgresql://localhost/test
 #   username: root
 #   password: changeme
 #   driverClassName: org.postgresql.Drive
+#  jpa:
+#    show-sql: true
+#    properties:
+#         hibernate:
+#             dialect: org.hibernate.dialect.PostgreSQLDialect

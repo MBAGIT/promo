@@ -1,0 +1,15 @@
+
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<nav class="navbar navbar-fixed-top" th:fragment="header" th:align="right">
+    <div class="container">
+        <span th:text="#{lang.change}"></span>:
+        <select id="locales">
+            <option value="" ></option>
+            <option id="en" value="en" th:text="#{lang.en}"></option>
+            <option id="es" value="es" th:text="#{lang.es}"></option>
+            <option id="pt" value="pt" th:text="#{lang.pt}"></option>
+        </select>
+    </div>
+</nav>
+</html>
+
