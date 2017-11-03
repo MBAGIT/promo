@@ -1,0 +1,54 @@
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8"  />
+<head>
+    <title th:text="#{app.title}"> Title </title>
+    <link  type="text/css" rel="stylesheet"  href="../bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+            $(document).ready(function() {
+                $("#locales").change(function () {
+                    var selectedOption = $('#locales').val();
+                    if (selectedOption != ''){
+                        window.location.replace('international?lang=' + selectedOption);
+                        $('#'+selectedOption).hide();
+
+                    }
+                });
+            });
+     </script>
+</head>
+<body>
+    <div th:replace="header :: header">&nbsp;</div>
+        <div class="main"  >
+            <br/><br/>
+            <div class="with:80%" style="height:90%" >
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th th:text="#{client.apelido}">User Name</th>
+                        <th th:text="#{client.email}">Email</th>
+                        <th th:text="#{client.profissao}">Age</th>
+                        <th th:text="#{edit}">Edit</th>
+                        <th th:text="#{delete}">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  th:each="cliente : ${clientes}">
+                        <td th:text="${cliente.apelido}"></td>
+                        <td th:text="${cliente.email}"></td>
+                        <td th:text="${cliente.profissao}"></td>
+                        <td><a th:href="@{/cliente/toEdit(id=${user.id})}" th:text="#{edit}" >edit</a></td>
+                        <td><a th:href="@{/cliente/delete(id=${user.id})}" th:text="#{delete}">delete</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2 control-label">
+                    <a href="/cliente/toAdd" th:href="@{/cliente/toAdd}" class="btn btn-info" th:text="#{add}">add</a>
+                </div>
+            </div>
+        </div>
+    <div th:replace="footer :: footer">&nbsp;</div>
+</body>
+</html>

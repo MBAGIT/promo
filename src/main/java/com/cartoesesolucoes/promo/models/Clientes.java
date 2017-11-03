@@ -37,7 +37,7 @@ public class Clientes {
     /** numtlm **/
     private String numtlm;
 
-    /** apelido **/
+    /** numtlf **/
     private String numtlf;
 
     /** email **/
