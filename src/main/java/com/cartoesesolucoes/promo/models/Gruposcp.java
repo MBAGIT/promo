@@ -2,11 +2,7 @@ package com.cartoesesolucoes.promo.models;
 
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -17,11 +13,11 @@ public class Gruposcp {
 	@GeneratedValue(generator = "gruposcp_seq")
 	private Long id;
 
-	@OneToMany(mappedBy = "id")
-	private List<Gruposp> gruposp;
+	@ManyToOne
+	private Gruposp gruposp;
 
-	@OneToMany(mappedBy = "id")
-	private List<Gruposc> gruposc;
+	@ManyToOne
+	private Gruposc gruposc;
 
 	/** valor **/
 	@NotNull
@@ -42,33 +38,20 @@ public class Gruposcp {
 		this.id = id;
 	}
 
-	
 
-	/**
-	 * @return the gruposp
-	 */
-	public List<Gruposp> getGruposp() {
+	public Gruposp getGruposp() {
 		return gruposp;
 	}
 
-	/**
-	 * @param gruposp the gruposp to set
-	 */
-	public void setGruposp(List<Gruposp> gruposp) {
+	public void setGruposp(Gruposp gruposp) {
 		this.gruposp = gruposp;
 	}
 
-	/**
-	 * @return the gruposc
-	 */
-	public List<Gruposc> getGruposc() {
+	public Gruposc getGruposc() {
 		return gruposc;
 	}
 
-	/**
-	 * @param gruposc the gruposc to set
-	 */
-	public void setGruposc(List<Gruposc> gruposc) {
+	public void setGruposc(Gruposc gruposc) {
 		this.gruposc = gruposc;
 	}
 

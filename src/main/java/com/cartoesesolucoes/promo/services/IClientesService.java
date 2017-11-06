@@ -4,6 +4,7 @@ import com.cartoesesolucoes.promo.exception.ClientesNotFoundException;
 import com.cartoesesolucoes.promo.models.Clientes;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IClientesService {
 
@@ -14,6 +15,15 @@ public interface IClientesService {
      * @return
      */
     boolean ClientExists(Long idcliente);
+
+
+    /**
+     * check exist cliente
+     *
+     * @param idcliente
+     * @return
+     */
+    Optional<Clientes> getClient(Long idcliente);
 
 
     /**

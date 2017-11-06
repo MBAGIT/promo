@@ -27,6 +27,14 @@ public class ClientesServiceImpl implements IClientesService {
     }
 
     @Override
+    public Optional<Clientes> getClient(Long idcliente) {
+
+        return clientesRepository.findByidCliente (idcliente);
+
+
+    }
+
+    @Override
     public String ClientDiscount(Long idcliente) {
 
         return clientesRepository.findByidCliente (idcliente).get ().getDescontos ();

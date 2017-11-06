@@ -1,9 +1,12 @@
 package com.cartoesesolucoes.promo.exception;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
-public class ClientesNotFoundException extends Throwable {
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class ClientesNotFoundException extends RuntimeException {
 
     public ClientesNotFoundException(Long idcliente) {
-        super("could not found client for Id : " + idcliente);
+        super("could not found cliente for Id : " + idcliente);
     }
 }
