@@ -9,6 +9,6 @@ import com.cartoesesolucoes.promo.models.Movimentos;
 
 public interface IMovimentosRepository extends JpaRepository<Movimentos, Long> {
 	
-	Optional<Movimentos> findMovimentosByIdClientes(Long idCliente);
+	Optional<Movimentos> getMovementsOfClientes(Long idCliente);
 
 }

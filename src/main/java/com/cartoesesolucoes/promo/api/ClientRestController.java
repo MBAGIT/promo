@@ -51,9 +51,8 @@ public class ClientRestController {
      */
     // MediaType.APPLICATION_JSON_VALUE
     @RequestMapping(method = RequestMethod.GET, value = "/clienteDiscount/{clienteId}")
-    Clientes getDiscount(@PathVariable Long clienteId)  {
-        return this.clientesService.ClientDiscount(clienteId)
-                .orElseThrow (() -> new ClientesDiscountNotFoundException (clienteId));
+    String getDiscount(@PathVariable Long clienteId)  {
+        return this.clientesService.getDiscountClient(clienteId);
     } 
     
     
