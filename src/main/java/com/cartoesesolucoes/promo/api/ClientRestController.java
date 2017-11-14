@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping(value = "/clientService")
 public class ClientRestController {
@@ -52,7 +54,11 @@ public class ClientRestController {
     // MediaType.APPLICATION_JSON_VALUE
     @RequestMapping(method = RequestMethod.GET, value = "/clienteDiscount/{clienteId}")
     String getDiscount(@PathVariable Long clienteId)  {
-        return this.clientesService.getDiscountClient(clienteId);
+        Optional <Clientes> client = this.clientesService.getClient (clienteId);
+        if(client.isPresent ()){
+           return client.get ().getDescontos ();
+
+        }else throw new ClientesNotFoundException (clienteId);
     } 
     
     

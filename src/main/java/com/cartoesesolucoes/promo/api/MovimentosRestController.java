@@ -11,6 +11,8 @@ import com.cartoesesolucoes.promo.models.Clientes;
 import com.cartoesesolucoes.promo.models.Movimentos;
 import com.cartoesesolucoes.promo.services.IMovimentosService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/movimentosService")
 public class MovimentosRestController {
@@ -34,7 +36,8 @@ public class MovimentosRestController {
      */
     // MediaType.APPLICATION_JSON_VALUE
     @RequestMapping(method = RequestMethod.GET, value = "/movimentos/{clienteId}")
-    Movimentos getMovimentosClientes(@PathVariable Long clienteId)  {
+	List<Movimentos> getMovimentosClientes(@PathVariable Long clienteId)  {
+
         return this.movimentosService.movimentsConsult(clienteId)
                 .orElseThrow (() -> new MovimentosException (clienteId));
     }

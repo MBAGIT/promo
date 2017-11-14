@@ -26,14 +26,6 @@ public interface IClientesService {
      */
     Optional<Clientes> getClient(Long idcliente);
 
-   String  getDiscountClient(Long idcliente);
-    /**
-     * Return descontos field from client
-     *
-     * @param idcliente
-     * @return
-     */
-    String ClientDiscount(Long idcliente) throws ClientesDiscountNotFoundException;
 
     /**
      * Find all Clientes

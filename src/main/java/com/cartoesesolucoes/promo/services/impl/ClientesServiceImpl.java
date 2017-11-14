@@ -33,21 +33,7 @@ public class ClientesServiceImpl implements IClientesService {
         return clientesRepository.findByidCliente (idcliente);
 
     }
-    
-   @Override
-   public String getDiscountClient(Long idcliente){
-	  return clientesRepository.getDiscountClientes (idcliente);
-   }
 
-    @Override
-    public String ClientDiscount(Long idcliente) throws ClientesDiscountNotFoundException  {
-  
-    	if(clientesRepository.getDiscountClientes (idcliente)!= null){
-        return clientesRepository.getDiscountClientes (idcliente);
-    	}else{
-    		throw new ClientesDiscountNotFoundException(idcliente);
-    	}
-    }
 
     @Override
     public List<Clientes> getAllClientes() {

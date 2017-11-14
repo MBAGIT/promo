@@ -1,9 +1,6 @@
 package com.cartoesesolucoes.promo.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.text.SimpleDateFormat;
@@ -29,8 +26,8 @@ public class Movimentos {
     private SimpleDateFormat  data = new SimpleDateFormat ("11-11-1111 00:00:00");
 
     /** idcliente **/
-    @NotNull
-    private Integer idcliente = 0;
+    @ManyToOne
+    private Clientes clientes ;
     
     /** vendedor **/
     @NotNull
@@ -111,13 +108,7 @@ public class Movimentos {
 		this.data = data;
 	}
 
-	public Integer getIdcliente() {
-		return idcliente;
-	}
 
-	public void setIdcliente(Integer idcliente) {
-		this.idcliente = idcliente;
-	}
 
 	public Integer getVendedor() {
 		return vendedor;
@@ -213,6 +204,13 @@ public class Movimentos {
 
 	public void setNdoc(String ndoc) {
 		this.ndoc = ndoc;
-	}    
-    
+	}
+
+	public Clientes getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(Clientes clientes) {
+		this.clientes = clientes;
+	}
 }
