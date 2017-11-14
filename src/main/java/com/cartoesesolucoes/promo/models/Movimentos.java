@@ -213,7 +213,6 @@ public class Movimentos {
 
 	public void setNdoc(String ndoc) {
 		this.ndoc = ndoc;
-	}
-    
+	}    
     
 }

@@ -1,5 +1,6 @@
 package com.cartoesesolucoes.promo.services;
 
+import com.cartoesesolucoes.promo.exception.ClientesDiscountNotFoundException;
 import com.cartoesesolucoes.promo.exception.ClientesNotFoundException;
 import com.cartoesesolucoes.promo.models.Clientes;
 
@@ -32,7 +33,7 @@ public interface IClientesService {
      * @param idcliente
      * @return
      */
-    String ClientDiscount(Long idcliente);
+    String ClientDiscount(Long idcliente) throws ClientesDiscountNotFoundException;
 
     /**
      * Find all Clientes

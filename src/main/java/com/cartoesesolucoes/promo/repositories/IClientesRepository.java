@@ -9,6 +9,8 @@ import java.util.Optional;
 public interface IClientesRepository extends JpaRepository<Clientes,Long> {
 
     Optional<Clientes> findByidCliente(Long idCliente);
+    
+    String getDiscountClientes(Long idCliente);
 
 
 }

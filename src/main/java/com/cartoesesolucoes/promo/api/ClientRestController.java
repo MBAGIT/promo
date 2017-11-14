@@ -40,4 +40,21 @@ public class ClientRestController {
                 .orElseThrow (() -> new ClientesNotFoundException (clienteId));
     }
 
+    
+    /**
+     * /clientService/cliente/1
+     *
+     * Method to show All Informations of the Customer
+     *
+     * @param clienteId
+     * @return
+     */
+    // MediaType.APPLICATION_JSON_VALUE
+    @RequestMapping(method = RequestMethod.GET, value = "/clienteDiscount/{clienteId}")
+    Clientes getDiscount(@PathVariable Long clienteId)  {
+        return this.clientesService.ClientDiscount(clienteId)
+                .orElseThrow (() -> new ClientesDiscountNotFoundException (clienteId));
+    } 
+    
+    
 }

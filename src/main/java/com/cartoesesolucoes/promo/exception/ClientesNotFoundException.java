@@ -9,4 +9,5 @@ public class ClientesNotFoundException extends RuntimeException {
     public ClientesNotFoundException(Long idcliente) {
         super("could not found cliente for Id : " + idcliente);
     }
+    
 }

@@ -28,7 +28,7 @@ public class Promos_prods {
 
     
 	private String descricao; 
-	
+		
 	private String codigo;
 	
 	@NotNull
